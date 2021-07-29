@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function sleep(ms) {
+      return new Promise(
+        resolve => {
+          setTimeout(() => resolve(true), ms)
+        }
+      )
+    }
+    async function handleClick() {
+      //throw 'Ele insere um erro ao executar na Promise Automático!'
+      await sleep(5000)
+      return 'Leandro'
+    }
+
+    function handleClick2() {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve('Leandro')
+        }, 5000)
+      })
+    }
+  </script>
+</body>
+
+</html>
